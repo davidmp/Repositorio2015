@@ -6,10 +6,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+//import java.sql.*;
 
 public class DBconn {
-    public PreparedStatement ps;
-    public ResultSet rs;
+    public PreparedStatement ps;//Es para colocar o preparar la consulta SQL
+    public ResultSet rs;//Recibir los resultados de la consulta ejecutada
+    
+    
     public Connection con=null;
     public String sql;
     

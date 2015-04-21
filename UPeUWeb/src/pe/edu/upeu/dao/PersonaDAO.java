@@ -16,16 +16,17 @@ public class PersonaDAO extends DBconn{
     
     public void reportarPersonas(){
         try {
-            sql="select * from personas "; 
-            conexionDB();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
+            sql="select * from personas; ";//escribiendo la consulta 
+            conexionDB();//conexion a base de datos
+            ps=con.prepareStatement(sql);//preparando la consulta
+            rs=ps.executeQuery();//Ejecutando la consulta y almacena los resultados en rs
             while (rs.next()) {
-                System.out.println("Nombre: "+rs.getString("nombre")+" id: "+rs.getInt("id"));                
+                System.out.println("Nombre: "+rs.getString("nombre")+"\t id: "+rs.getInt("id")+"\tCelular: "+rs.getString("celular"));                
             }
             
         } catch (Exception e) { System.out.println("Error al Reportar: "+e.getMessage());
         }
+        
         finally{
         cerrarConexionDB();
         }
