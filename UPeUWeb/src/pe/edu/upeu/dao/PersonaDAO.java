@@ -58,7 +58,7 @@ public class PersonaDAO extends DBconn{
         finally{
         cerrarConexionDB();
         }
-       return null;
+       return data;
     }    
     
     

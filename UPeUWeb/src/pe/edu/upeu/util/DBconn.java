@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.mariadb.jdbc.Driver;
 //import java.sql.*;
 
 public class DBconn {
@@ -20,9 +21,10 @@ public class DBconn {
     }
     
     public void conexionDB() throws SQLException{
+        DriverManager.registerDriver(new Driver());
         try {
             if(con==null){
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3307/test", "root", "123456");
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123456");
                 System.out.println("Conexion exitosa!");
             }
         } catch (SQLException e) { System.out.println("Error en conexion:"+e.getMessage());}
